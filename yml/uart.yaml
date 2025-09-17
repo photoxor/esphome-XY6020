@@ -11,8 +11,8 @@ modbus_controller:
     update_interval: 10s
 
 uart:
-  tx_pin: ${tx_pin}
-  rx_pin: ${rx_pin}
+  tx_pin: ${modbus_tx_pin}
+  rx_pin: ${modbus_rx_pin}
   id: uart_bus
   baud_rate: 115200
   stop_bits: 1
