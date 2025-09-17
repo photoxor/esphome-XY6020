@@ -1,6 +1,7 @@
 sensor:
   - platform: modbus_controller
-    name: "${V_SET}"
+    name: "PEMF Target Voltage"
+    id: v_pemf_modbus_set
     address: 0x00
     register_type: "holding"
     value_type: U_WORD
@@ -11,7 +12,8 @@ sensor:
      - multiply: 0.01
 
   - platform: modbus_controller
-    name: "${I_SET}"
+    name: "PEMF Max. Current"
+    id: i_pemf_modbus_set
     address: 0x01
     register_type: "holding"
     value_type: U_WORD
@@ -21,7 +23,8 @@ sensor:
      - multiply: 0.01
   
   - platform: modbus_controller
-    name: "${VOUT}"
+    name: "PEMF Voltage"
+    id: v_pemf_modbus
     address: 0x02
     register_type: "holding"
     value_type: U_WORD
@@ -31,18 +34,20 @@ sensor:
      - multiply: 0.01
 
   - platform: modbus_controller
-    name: "${IOUT}"
+    name: "PEMF Current"
+    id: i_pemf_modbus
     address: 0x03
     register_type: "holding"
     value_type: U_WORD
     device_class: CURRENT
-    #unit_of_measurement: "Ampere"
+    unit_of_measurement: "Ampere"
     accuracy_decimals: 2
     filters:
      - multiply: 0.01
 
   - platform: modbus_controller
-    name: "${POWER}"
+    name: "PEMF Power"
+    id: p_pemf_modbus
     address: 0x04
     register_type: "holding"
     value_type: U_WORD
@@ -52,7 +57,8 @@ sensor:
      - multiply: 0.1
 
   - platform: modbus_controller
-    name: "${UIN}"
+    name: "Input Voltage"
+    id: v_in_modbus
     address: 0x05
     register_type: "holding"
     value_type: U_WORD
@@ -132,7 +138,7 @@ sensor:
      - multiply: 1
   
   - platform: modbus_controller
-    name: "${t_in}"
+    name: "XL6020 Temperature Internal"
     address: 0x0D
     register_type: "holding"
     value_type: U_WORD
@@ -144,7 +150,7 @@ sensor:
      - multiply: 0.1
 
   - platform: modbus_controller
-    name: "${t_ex}"
+    name: "XL6020 Temperature External"
     address: 0x0E
     register_type: "holding"
     value_type: U_WORD
@@ -186,7 +192,7 @@ sensor:
     internal: true
 
   - platform: modbus_controller
-    name: "Model"
+    name: "XY6020 Model"
     address: 0x16
     register_type: "holding"
     value_type: U_WORD
@@ -196,7 +202,7 @@ sensor:
      - multiply: 1
   
   - platform: modbus_controller
-    name: "Version"
+    name: "XY6020 Version"
     address: 0x17
     register_type: "holding"
     value_type: U_WORD
@@ -206,7 +212,7 @@ sensor:
      - multiply: 1
   
   - platform: modbus_controller
-    name: "M050"
+    name: "XY6020  M050"
     address: 0x50
     force_new_range: true
     register_type: "holding"
@@ -217,7 +223,7 @@ sensor:
      - multiply: 0.01
 
   - platform: modbus_controller
-    name: "M051 Current Setting"
+    name: "XY6020 M051 Current Setting"
     address: 0x51
     register_type: "holding"
     value_type: U_WORD
@@ -227,7 +233,7 @@ sensor:
      - multiply: 0.01
 
   - platform: modbus_controller
-    name: "M052 Low Voltage Protected"
+    name: "XY6020 M052 Low Voltage Protected"
     address: 0x52
     register_type: "holding"
     value_type: U_WORD
@@ -237,7 +243,7 @@ sensor:
      - multiply: 0.01
 
   - platform: modbus_controller
-    name: "M053 Over Voltage Protected"
+    name: "XY6020 M053 Over Voltage Protected"
     address: 0x53
     register_type: "holding"
     value_type: U_WORD
@@ -247,7 +253,7 @@ sensor:
      - multiply: 0.01
      
   - platform: modbus_controller
-    name: "M054 Over Current Protect"
+    name: "XY6020 M054 Over Current Protect"
     address: 0x54
     register_type: "holding"
     value_type: U_WORD
@@ -257,7 +263,7 @@ sensor:
      - multiply: 0.01
 
   - platform: modbus_controller
-    name: "M055 Over Power Protected"
+    name: "XY6020 M055 Over Power Protected"
     address: 0x55
     register_type: "holding"
     value_type: U_WORD
@@ -267,7 +273,7 @@ sensor:
      - multiply: 1.0
 
   - platform: modbus_controller
-    name: "Maximum Output Time Hours"
+    name: "XY6020 Maximum Output Time Hours"
     address: 0x56
     register_type: "holding"
     value_type: U_WORD
@@ -277,7 +283,7 @@ sensor:
      - multiply: 0.01
 
   - platform: modbus_controller
-    name: "M57"
+    name: "XY6020 M57"
     address: 0x57
     register_type: "holding"
     value_type: U_WORD
@@ -287,7 +293,7 @@ sensor:
      - multiply: 0.01
 
   - platform: modbus_controller
-    name: "M058"
+    name: "XY6020 M058"
     address: 0x58
     register_type: "holding"
     value_type: U_WORD
@@ -297,7 +303,7 @@ sensor:
      - multiply: 0.01
 
   - platform: modbus_controller
-    name: "M059"
+    name: "XY6020 M059"
     address: 0x59
     register_type: "holding"
     value_type: U_WORD
@@ -307,7 +313,7 @@ sensor:
      - multiply: 0.01
 
   - platform: modbus_controller
-    name: "Set Over Temreture Protected"
+    name: "Set Over Temperature Protected"
     address: 0x5C
     register_type: "holding"
     value_type: U_WORD
