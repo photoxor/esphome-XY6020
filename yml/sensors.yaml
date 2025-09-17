@@ -162,7 +162,7 @@ sensor:
      - multiply: 0.1
 
   - platform: modbus_controller
-    modbus_controller_id: powersupply
+    modbus_controller_id: mod_bus_controller
     address: 10
     #name: "turnon_hours"
     id: turnon_hours
@@ -172,7 +172,7 @@ sensor:
     internal: true
 
   - platform: modbus_controller
-    modbus_controller_id: powersupply
+    modbus_controller_id: mod_bus_controller
     address: 11
     #name: "turnon_minutes"
     id: turnon_minutes
@@ -182,7 +182,7 @@ sensor:
     internal: true
   
   - platform: modbus_controller
-    modbus_controller_id: powersupply
+    modbus_controller_id: mod_bus_controller
     address: 12
     #name: "turnon_seconds"
     id: turnon_seconds
