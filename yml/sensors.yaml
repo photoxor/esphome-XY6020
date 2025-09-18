@@ -10,6 +10,7 @@ sensor:
     accuracy_decimals: 2
     filters:
      - multiply: 0.01
+    entity_category: DIAGNOSTIC
 
   - platform: modbus_controller
     name: "PEMF Max. Current"
@@ -21,6 +22,7 @@ sensor:
     accuracy_decimals: 2
     filters:
      - multiply: 0.01
+    entity_category: DIAGNOSTIC
   
   - platform: modbus_controller
     name: "PEMF Voltage"
@@ -32,6 +34,7 @@ sensor:
     accuracy_decimals: 2
     filters:
      - multiply: 0.01
+    entity_category: DIAGNOSTIC
 
   - platform: modbus_controller
     name: "PEMF Current"
@@ -44,6 +47,7 @@ sensor:
     accuracy_decimals: 2
     filters:
      - multiply: 0.01
+    entity_category: DIAGNOSTIC
 
   - platform: modbus_controller
     name: "PEMF Power"
@@ -55,9 +59,10 @@ sensor:
     accuracy_decimals: 2
     filters:
      - multiply: 0.1
+    entity_category: DIAGNOSTIC
 
   - platform: modbus_controller
-    name: "Input Voltage"
+    name: "Power Input Voltage"
     id: v_in_modbus
     address: 0x05
     register_type: "holding"
@@ -66,6 +71,7 @@ sensor:
     accuracy_decimals: 2
     filters:
      - multiply: 0.01
+    entity_category: DIAGNOSTIC
 
   - platform: modbus_controller
     name: "Output AH low 16 bits"
@@ -76,6 +82,7 @@ sensor:
     accuracy_decimals: 2
     filters:
      - multiply: 0.01
+    entity_category: DIAGNOSTIC
 
   - platform: modbus_controller
     name: "Output AH high 16 bits"
@@ -86,6 +93,7 @@ sensor:
     accuracy_decimals: 2
     filters:
      - multiply: 0.01
+    entity_category: DIAGNOSTIC
 
   - platform: modbus_controller
     name: "Output WH low 16 bits"
@@ -96,6 +104,7 @@ sensor:
     accuracy_decimals: 2
     filters:
      - multiply: 0.01
+    entity_category: DIAGNOSTIC
 
   - platform: modbus_controller
     name: "Output WH high 16 bits"
@@ -106,9 +115,10 @@ sensor:
     accuracy_decimals: 2
     filters:
      - multiply: 0.01
+    entity_category: DIAGNOSTIC
   
   - platform: modbus_controller
-    name: "Open Time Hours"
+    name: "XL6020 Open Time Hours"
     address: 0x0A
     register_type: "holding"
     value_type: U_WORD
@@ -116,26 +126,29 @@ sensor:
     accuracy_decimals: 0
     filters:
      - multiply: 1
+    entity_category: DIAGNOSTIC
 
-  - platform: modbus_controller
-    name: "Open Time Minutes"
-    address: 0x0B
-    register_type: "holding"
-    value_type: U_WORD
-    unit_of_measurement: "Minutes"
-    accuracy_decimals: 0
-    filters:
-     - multiply: 1
+  # - platform: modbus_controller
+  #   name: "XL6020 Open Time Minutes"
+  #   address: 0x0B
+  #   register_type: "holding"
+  #   value_type: U_WORD
+  #   unit_of_measurement: "Minutes"
+  #   accuracy_decimals: 0
+  #   filters:
+  #    - multiply: 1
+  #   entity_category: DIAGNOSTIC
 
-  - platform: modbus_controller
-    name: "Open Time Seconds"
-    address: 0x0C
-    register_type: "holding"
-    value_type: U_WORD
-    unit_of_measurement: "Seconds"
-    accuracy_decimals: 0
-    filters:
-     - multiply: 1
+  # - platform: modbus_controller
+  #   name: "XL6020 Open Time Seconds"
+  #   address: 0x0C
+  #   register_type: "holding"
+  #   value_type: U_WORD
+  #   unit_of_measurement: "Seconds"
+  #   accuracy_decimals: 0
+  #   filters:
+  #    - multiply: 1
+  #   entity_category: DIAGNOSTIC
   
   - platform: modbus_controller
     name: "XL6020 Temperature Internal"
@@ -148,6 +161,7 @@ sensor:
     accuracy_decimals: 2
     filters:
      - multiply: 0.1
+    entity_category: DIAGNOSTIC
 
   - platform: modbus_controller
     name: "XL6020 Temperature External"
@@ -160,164 +174,168 @@ sensor:
     accuracy_decimals: 2
     filters:
      - multiply: 0.1
+    entity_category: DIAGNOSTIC
 
   - platform: modbus_controller
     modbus_controller_id: mod_bus_controller
     address: 10
-    #name: "turnon_hours"
+    name: "XL6020 On-Hours"
     id: turnon_hours
     unit_of_measurement: "hours"
     register_type: holding
     value_type: U_WORD
     internal: true
+    entity_category: DIAGNOSTIC
 
-  - platform: modbus_controller
-    modbus_controller_id: mod_bus_controller
-    address: 11
-    #name: "turnon_minutes"
-    id: turnon_minutes
-    unit_of_measurement: "minutes"
-    register_type: holding
-    value_type: U_WORD
-    internal: true
+  # - platform: modbus_controller
+  #   modbus_controller_id: mod_bus_controller
+  #   address: 11
+  #   name: "XL6020 turnon_minutes"
+  #   id: turnon_minutes
+  #   unit_of_measurement: "minutes"
+  #   register_type: holding
+  #   value_type: U_WORD
+  #   internal: true
+  #   entity_category: DIAGNOSTIC
   
-  - platform: modbus_controller
-    modbus_controller_id: mod_bus_controller
-    address: 12
-    #name: "turnon_seconds"
-    id: turnon_seconds
-    unit_of_measurement: "seconds"
-    register_type: holding
-    value_type: U_WORD
-    internal: true
+  # - platform: modbus_controller
+  #   modbus_controller_id: mod_bus_controller
+  #   address: 12
+  #   #name: "turnon_seconds"
+  #   id: turnon_seconds
+  #   unit_of_measurement: "seconds"
+  #   register_type: holding
+  #   value_type: U_WORD
+  #   internal: true
+  #   entity_category: DIAGNOSTIC
 
-  - platform: modbus_controller
-    name: "XY6020 Model"
-    address: 0x16
-    register_type: "holding"
-    value_type: U_WORD
-    unit_of_measurement: "Model"
-    accuracy_decimals: 0
-    filters:
-     - multiply: 1
+  # - platform: modbus_controller
+  #   name: "XY6020 Model"
+  #   address: 0x16
+  #   register_type: "holding"
+  #   value_type: U_WORD
+  #   unit_of_measurement: "Model"
+  #   accuracy_decimals: 0
+  #   filters:
+  #    - multiply: 1
   
-  - platform: modbus_controller
-    name: "XY6020 Version"
-    address: 0x17
-    register_type: "holding"
-    value_type: U_WORD
-    unit_of_measurement: "Version"
-    accuracy_decimals: 0
-    filters:
-     - multiply: 1
+  # - platform: modbus_controller
+  #   name: "XY6020 Version"
+  #   address: 0x17
+  #   register_type: "holding"
+  #   value_type: U_WORD
+  #   unit_of_measurement: "Version"
+  #   accuracy_decimals: 0
+  #   filters:
+  #    - multiply: 1
   
-  - platform: modbus_controller
-    name: "XY6020  M050"
-    address: 0x50
-    force_new_range: true
-    register_type: "holding"
-    value_type: U_WORD
-    unit_of_measurement: "V"
-    accuracy_decimals: 2
-    filters:
-     - multiply: 0.01
+  # - platform: modbus_controller
+  #   name: "XY6020  M050"
+  #   address: 0x50
+  #   force_new_range: true
+  #   register_type: "holding"
+  #   value_type: U_WORD
+  #   unit_of_measurement: "V"
+  #   accuracy_decimals: 2
+  #   filters:
+  #    - multiply: 0.01
 
-  - platform: modbus_controller
-    name: "XY6020 M051 Current Setting"
-    address: 0x51
-    register_type: "holding"
-    value_type: U_WORD
-    unit_of_measurement: "A"
-    accuracy_decimals: 2
-    filters:
-     - multiply: 0.01
+  # - platform: modbus_controller
+  #   name: "XY6020 M051 Current Setting"
+  #   address: 0x51
+  #   register_type: "holding"
+  #   value_type: U_WORD
+  #   unit_of_measurement: "A"
+  #   accuracy_decimals: 2
+  #   filters:
+  #    - multiply: 0.01
 
-  - platform: modbus_controller
-    name: "XY6020 M052 Low Voltage Protected"
-    address: 0x52
-    register_type: "holding"
-    value_type: U_WORD
-    unit_of_measurement: "V"
-    accuracy_decimals: 2
-    filters:
-     - multiply: 0.01
+  # - platform: modbus_controller
+  #   name: "XY6020 M052 Low Voltage Protected"
+  #   address: 0x52
+  #   register_type: "holding"
+  #   value_type: U_WORD
+  #   unit_of_measurement: "V"
+  #   accuracy_decimals: 2
+  #   filters:
+  #    - multiply: 0.01
 
-  - platform: modbus_controller
-    name: "XY6020 M053 Over Voltage Protected"
-    address: 0x53
-    register_type: "holding"
-    value_type: U_WORD
-    unit_of_measurement: "V"
-    accuracy_decimals: 2
-    filters:
-     - multiply: 0.01
+  # - platform: modbus_controller
+  #   name: "XY6020 M053 Over Voltage Protected"
+  #   address: 0x53
+  #   register_type: "holding"
+  #   value_type: U_WORD
+  #   unit_of_measurement: "V"
+  #   accuracy_decimals: 2
+  #   filters:
+  #    - multiply: 0.01
      
-  - platform: modbus_controller
-    name: "XY6020 M054 Over Current Protect"
-    address: 0x54
-    register_type: "holding"
-    value_type: U_WORD
-    unit_of_measurement: "A"
-    accuracy_decimals: 2
-    filters:
-     - multiply: 0.01
+  # - platform: modbus_controller
+  #   name: "XY6020 M054 Over Current Protect"
+  #   address: 0x54
+  #   register_type: "holding"
+  #   value_type: U_WORD
+  #   unit_of_measurement: "A"
+  #   accuracy_decimals: 2
+  #   filters:
+  #    - multiply: 0.01
 
-  - platform: modbus_controller
-    name: "XY6020 M055 Over Power Protected"
-    address: 0x55
-    register_type: "holding"
-    value_type: U_WORD
-    unit_of_measurement: "W"
-    accuracy_decimals: 1
-    filters:
-     - multiply: 1.0
+  # - platform: modbus_controller
+  #   name: "XY6020 M055 Over Power Protected"
+  #   address: 0x55
+  #   register_type: "holding"
+  #   value_type: U_WORD
+  #   unit_of_measurement: "W"
+  #   accuracy_decimals: 1
+  #   filters:
+  #    - multiply: 1.0
 
-  - platform: modbus_controller
-    name: "XY6020 Maximum Output Time Hours"
-    address: 0x56
-    register_type: "holding"
-    value_type: U_WORD
-    unit_of_measurement: "Hours"
-    accuracy_decimals: 2
-    filters:
-     - multiply: 0.01
+  # - platform: modbus_controller
+  #   name: "XY6020 Maximum Output Time Hours"
+  #   address: 0x56
+  #   register_type: "holding"
+  #   value_type: U_WORD
+  #   unit_of_measurement: "Hours"
+  #   accuracy_decimals: 2
+  #   filters:
+  #    - multiply: 0.01
 
-  - platform: modbus_controller
-    name: "XY6020 M57"
-    address: 0x57
-    register_type: "holding"
-    value_type: U_WORD
-    unit_of_measurement: "V"
-    accuracy_decimals: 2
-    filters:
-     - multiply: 0.01
+  # - platform: modbus_controller
+  #   name: "XY6020 M57"
+  #   address: 0x57
+  #   register_type: "holding"
+  #   value_type: U_WORD
+  #   unit_of_measurement: "V"
+  #   accuracy_decimals: 2
+  #   filters:
+  #    - multiply: 0.01
 
-  - platform: modbus_controller
-    name: "XY6020 M058"
-    address: 0x58
-    register_type: "holding"
-    value_type: U_WORD
-    unit_of_measurement: "V"
-    accuracy_decimals: 2
-    filters:
-     - multiply: 0.01
+  # - platform: modbus_controller
+  #   name: "XY6020 M058"
+  #   address: 0x58
+  #   register_type: "holding"
+  #   value_type: U_WORD
+  #   unit_of_measurement: "V"
+  #   accuracy_decimals: 2
+  #   filters:
+  #    - multiply: 0.01
 
-  - platform: modbus_controller
-    name: "XY6020 M059"
-    address: 0x59
-    register_type: "holding"
-    value_type: U_WORD
-    unit_of_measurement: "V"
-    accuracy_decimals: 2
-    filters:
-     - multiply: 0.01
+  # - platform: modbus_controller
+  #   name: "XY6020 M059"
+  #   address: 0x59
+  #   register_type: "holding"
+  #   value_type: U_WORD
+  #   unit_of_measurement: "V"
+  #   accuracy_decimals: 2
+  #   filters:
+  #    - multiply: 0.01
 
-  - platform: modbus_controller
-    name: "Set Over Temperature Protected"
-    address: 0x5C
-    register_type: "holding"
-    value_type: U_WORD
-    unit_of_measurement: "Celsius"
-    accuracy_decimals: 2
-    filters:
-     - multiply: 1.0
+  # - platform: modbus_controller
+  #   name: "Set Over Temperature Protected"
+  #   address: 0x5C
+  #   register_type: "holding"
+  #   value_type: U_WORD
+  #   unit_of_measurement: "Celsius"
+  #   accuracy_decimals: 2
+  #   filters:
+  #    - multiply: 1.0
