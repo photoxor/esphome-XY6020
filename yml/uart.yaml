@@ -17,6 +17,6 @@ uart:
   baud_rate: 115200
   stop_bits: 1
   parity: NONE
-  debug:
-    direction: BOTH
-    dummy_receiver: true
+  #debug:
+  #  direction: BOTH
+  #  dummy_receiver: true
