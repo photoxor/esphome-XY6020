@@ -5,7 +5,8 @@ text_sensor:
     register_type: holding
     address: 0x10
     raw_encode: HEXBYTES
-    name: "Protect Status"
+    name: "XL6020 Protect Status"
+    entity_category: DIAGNOSTIC 
     lambda: |-
       uint16_t value = modbus_controller::word_from_hex_str(x, 0);
       switch (value) {
@@ -38,7 +39,8 @@ text_sensor:
     register_type: holding
     address: 0x11
     raw_encode: HEXBYTES
-    name: "CV CC"
+    name: "XL6020 CV-CC"
+    entity_category: DIAGNOSTIC 
     lambda: |-
       uint16_t value = modbus_controller::word_from_hex_str(x, 0);
       switch (value) {
@@ -55,7 +57,8 @@ text_sensor:
     register_type: holding
     address: 0x12
     raw_encode: HEXBYTES
-    name: "Power Switch On Off"
+    name: "XL6020 Power Switch"
+    entity_category: DIAGNOSTIC 
     lambda: |-
       uint16_t value = modbus_controller::word_from_hex_str(x, 0);
       switch (value) {
@@ -71,7 +74,8 @@ text_sensor:
     register_type: holding
     address: 0x0F
     raw_encode: HEXBYTES
-    name: "Key Lock"
+    name: "XL6020 Key Lock"
+    entity_category: DIAGNOSTIC 
     lambda: |-
       uint16_t value = modbus_controller::word_from_hex_str(x, 0);
       switch (value) {
@@ -83,7 +87,8 @@ text_sensor:
  
 
   - platform: template
-    name: "Turn On Time"
+    name: "XL6020 Turn On Time"
+    entity_category: DIAGNOSTIC 
     lambda: |-
       char buffer[16];
       std::string ton_time;
