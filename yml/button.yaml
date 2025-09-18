@@ -1,7 +1,8 @@
 button:
   - platform: template
-    name: Clear Protect
+    name: XL6020 Clear Protect
     on_press:
       - number.set:
              id: protectclear
              value: 00
+    entity_category: DIAGNOSTIC
